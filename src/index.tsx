@@ -1,15 +1,18 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Hello from './componetns/Search'
+// import Hello from './componetns/Practice'
+import { createStore } from 'redux'
 
-class App extends React.Component {
-  render() {
-    return (
-        <div>
-          <Hello greeting="Hello!" />
-        </div>
-    );
-  }
-}
+import App from './componetns/App'
+import { rootReducer } from './modules'
+import { Provider }  from 'react-redux'
 
-ReactDOM.render(<App/>, document.querySelector('#app'));
+const store = createStore(rootReducer)
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector('#app')
+)
+
