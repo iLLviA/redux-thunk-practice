@@ -1,16 +1,20 @@
 import * as React from 'react'
-import AddTodo from '../container/AddTodo'
-import Footer from '../componetns/Fotter'
-import VisibleTodoList from '../container/VisibleTodoList';
+import TodoList from './pages/TodoList'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-const App: React.SFC = () => {
-    return (
-        <div>
-            <AddTodo />
-            <VisibleTodoList />
-            <Footer />
-        </div>
-    )
+class App extends React.Component {
+    render(){
+        return(
+            <Router>
+              <div>
+                <ul className="navigation">
+                    <li><Link to="/">TodoList</Link></li>
+                    <li><Link to="/hotels">SearchHotels</Link></li>
+                </ul>
+              </div>
+            </Router>
+        )
+    }
 }
 
 export default App
