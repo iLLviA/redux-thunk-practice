@@ -4,7 +4,7 @@ import Footer from '../../componetns/Fotter'
 import VisibleTodoList from '../../container/VisibleTodoList';
 
 const TodoList:React.FC = () => (
-    <div>
+    <div className="TodoList">
             <AddTodo />
             <VisibleTodoList />
             <Footer />
