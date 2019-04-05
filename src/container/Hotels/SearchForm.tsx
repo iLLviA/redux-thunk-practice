@@ -3,6 +3,7 @@ import SearchForm from '../../componetns/Hotels/SearchForm'
 import { connect } from 'react-redux'
 import { Action, Dispatch } from 'redux'
 import { actionCreator } from '../../modules/'
+import { geocode } from '../../Domain/ Geocoder'
 
 interface State {
     place: string
@@ -10,7 +11,8 @@ interface State {
 
 const mapDispatchToProps = (dispatch:Dispatch<Action>) => {
     return {
-        setPlace: (place:string) => dispatch(actionCreator.hotel.setPlace({place}))
+        setPlace: (place:string) => dispatch(actionCreator.hotel.setPlace({place})),
+        searchPlace: () => {}
     }
 }
 

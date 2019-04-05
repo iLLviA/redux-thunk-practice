@@ -3,6 +3,7 @@ import * as React from 'react'
 interface Props {
     place: string
     setPlace: (place:string) => void
+    searchPlace: () => void
 }
 
 const SearchForm = (props:Props) => {
@@ -12,6 +13,7 @@ const SearchForm = (props:Props) => {
         if(props.place == ''){
             return ;
         }
+        props.searchPlace()
     }
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
