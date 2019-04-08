@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { ShadowPropTypesIOS } from 'react-native';
 
 const GEOCODE_ENDPOINT = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyArdDInOBYawxpt97Jp7z1EjrtaLpgzv3Q';
 
