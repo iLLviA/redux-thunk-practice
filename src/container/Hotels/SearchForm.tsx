@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Action, Dispatch } from 'redux'
 import { actionCreator } from '../../modules/'
 import { geocode } from '../../Domain/ Geocoder'
-import { rootState } from '../../modules/hotels'
+import { RootState } from '../../modules/index'
 
 const mapDispatchToProps = (dispatch:Dispatch<Action>,getState:any) => {
     
@@ -14,9 +14,9 @@ const mapDispatchToProps = (dispatch:Dispatch<Action>,getState:any) => {
             console.log(getState)
             geocode(place).then(
                 ({status,location,address}) => {
-                    const {lat,lng} = location
                     switch(status){
                         case 'OK' : {
+                            const {lat,lng} = location
                             dispatch(actionCreator.hotel.searchPlace({lat,lng,address}))
                             break;
                         }
@@ -33,9 +33,10 @@ const mapDispatchToProps = (dispatch:Dispatch<Action>,getState:any) => {
     }
 }
 
-const mapStateToProps = (state:rootState) => {
+const mapStateToProps = (state:RootState) => {
+    console.log(state)
     return {
-        place: state.place
+        place:state.hotel.place
     }
 }
 

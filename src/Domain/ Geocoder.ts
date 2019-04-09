@@ -12,7 +12,9 @@ export const geocode = (place:string) =>
             const data = res.data;
             const status = data.status;
             const result = data.results[0];
+            console.log(result)
             if(typeof result === 'undefined') {
+                console.log(status)
                 return {status}
             }
             const address = result.formatted_address;

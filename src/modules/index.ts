@@ -6,6 +6,7 @@ import * as Hotel from './hotels'
 export type RootState = {
     todos: Todos.State;
     visibilityFilter: VisibilityFilter.State;
+    hotel: Hotel.rootState
 };
 
 export const rootReducer = combineReducers({

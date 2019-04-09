@@ -13,6 +13,7 @@ const SearchForm = (props:Props) => {
         if(props.place == ''){
             return ;
         }
+        console.log(props.place)
         props.searchPlace(props.place)
     }
 
