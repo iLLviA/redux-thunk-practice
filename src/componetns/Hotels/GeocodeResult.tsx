@@ -1,4 +1,6 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
+import { RootState } from '../../modules'
 
 interface Prop {
     lat: number
@@ -16,5 +18,14 @@ const GeocodeReasult = (props:Prop) => {
     )
 }
 
+const mapStateToProps = (state:RootState):Prop => {
+    return {
+        lat: state.hotel.location.lat,
+        lng: state.hotel.location.lng,
+        address: state.hotel.address
+    }
+}
 
-export default GeocodeReasult
+export default connect(
+   mapStateToProps
+)(GeocodeReasult)
