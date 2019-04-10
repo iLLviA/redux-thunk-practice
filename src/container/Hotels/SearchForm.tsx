@@ -5,19 +5,21 @@ import { Action, Dispatch } from 'redux'
 import { actionCreator } from '../../modules/'
 import { geocode } from '../../Domain/ Geocoder'
 import { RootState } from '../../modules/index'
+import { SearchHotelByLocation } from '../../Domain/HotelRepository'
 
 const mapDispatchToProps = (dispatch:Dispatch<Action>,getState:any) => {
     
     return {
         setPlace: (place:string) => dispatch(actionCreator.hotel.setPlace({place})),
         searchPlace: (place:string) => { 
-            console.log(getState)
+            (getState)
             geocode(place).then(
                 ({status,location,address}) => {
                     switch(status){
                         case 'OK' : {
                             const {lat,lng} = location
                             dispatch(actionCreator.hotel.searchPlace({lat,lng,address}))
+                            return SearchHotelByLocation(location)
                             break;
                         }
                         case 'ZERO_RESULTS': {
@@ -26,15 +28,18 @@ const mapDispatchToProps = (dispatch:Dispatch<Action>,getState:any) => {
                         }
                         default : dispatch(actionCreator.hotel.errorMassage({error:'エラーが発生しました。'}))
                     }
+                    return []
                 }
-            
-            )
-        }   
+                
+            ).then((hotels:any) => {
+                dispatch(actionCreator.hotel.changeHotels({hotels}))
+            })
+        }
     }
 }
 
 const mapStateToProps = (state:RootState) => {
-    console.log(state)
+    (state)
     return {
         place:state.hotel.place
     }

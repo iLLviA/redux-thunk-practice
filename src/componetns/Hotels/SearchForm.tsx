@@ -13,12 +13,12 @@ const SearchForm = (props:Props) => {
         if(props.place == ''){
             return ;
         }
-        console.log(props.place)
+        (props.place)
         props.searchPlace(props.place)
     }
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-        console.log(12341)
+        (12341)
         e.preventDefault()
         props.setPlace(e.target.value)
     }

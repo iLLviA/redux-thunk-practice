@@ -9,6 +9,7 @@ export interface rootState {
     }
     address: string
     error: string
+    hotels: []
 }
 
 const init = ():rootState => {
@@ -19,7 +20,8 @@ const init = ():rootState => {
             lng: 0
         },
         address:'',
-        error: ''
+        error: '',
+        hotels: []
     }
 }
 
@@ -45,10 +47,16 @@ export const reducer = (state:rootState = init(),action: Actions) => {
             }
         
         case 'ERROR_MASSAGE':
-        return {
-            ...state,
-            error: action.payload.error
-        }
+            return {
+                ...state,
+                error: action.payload.error
+            }
+        case 'CHANGE_HOTELS':
+            console.log(action.payload.hotels)
+            return {
+                ...state,
+                hotels: action.payload.hotels
+            }
         default: return state
     }
 }

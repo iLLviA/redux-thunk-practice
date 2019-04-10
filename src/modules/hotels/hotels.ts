@@ -13,6 +13,10 @@ interface ErrorMassageActionPayload {
     error: string
 } 
 
+interface ChangeHotelsActionPayload {
+    hotels: []
+}
+
 interface SetPlaceAction extends Action {
     type: 'SET_PLACE'
     payload: SetPlaceActionPayload
@@ -26,6 +30,12 @@ interface SearchPlaceAction extends Action {
 interface ErrorMassageAction extends Action {
     type: 'ERROR_MASSAGE'
     payload: ErrorMassageActionPayload
+}
+
+
+interface ChangeHotelsAction extends Action {
+    type: 'CHANGE_HOTELS'
+    payload: ChangeHotelsActionPayload
 }
 
 const setPlace = (payload: SetPlaceActionPayload):SetPlaceAction => {
@@ -49,14 +59,23 @@ const errorMassage = (payload:ErrorMassageActionPayload): ErrorMassageAction => 
     }
 }
 
+const changeHotels = (payload:ChangeHotelsActionPayload):ChangeHotelsAction => {
+    return {
+        type: 'CHANGE_HOTELS',
+        payload
+    }
+}
+
 
 export type Actions
     = SetPlaceAction
     | SearchPlaceAction
     | ErrorMassageAction
+    | ChangeHotelsAction
 
 export const actionCreator = {
     setPlace,
     searchPlace,
-    errorMassage
+    errorMassage,
+    changeHotels
 }
