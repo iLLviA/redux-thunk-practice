@@ -11,6 +11,7 @@ import { RootState } from '../../modules/index'
 // }
 
 const mapStateToProps = (state:RootState) => {
+    console.log(state)
     return {
         hotels: state.hotel.hotels
     }

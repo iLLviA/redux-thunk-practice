@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Hotel from '../../componetns/Hotels/Hotel'
 
 interface Prop {
     hotels:{
@@ -27,7 +28,19 @@ const HotelsTable = (props:Prop) => {
        </tr>
       </thead>
       <tbody>
-          {props.hotels.map}
+          {props.hotels.map(hotel => {
+              return (
+                    <Hotel 
+                        name={hotel.name}
+                        distance={hotel.distance}
+                        price={hotel.price}
+                        reviewAverage={hotel.reviewAverage}
+                        reviewCount={hotel.reviewCount}
+                        url={hotel.url}
+                        thumbUrl={hotel.thumbUrl}
+                    />
+              )
+          })}
       </tbody>
     </table>
     )
