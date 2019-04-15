@@ -52,7 +52,6 @@ export const reducer = (state:rootState = init(),action: Actions) => {
                 error: action.payload.error
             }
         case 'CHANGE_HOTELS':
-            console.log(action.payload.hotels)
             return {
                 ...state,
                 hotels: action.payload.hotels
