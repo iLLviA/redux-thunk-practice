@@ -14,6 +14,7 @@ export type SetLocationActionPayload = {
         lat: number
         lng: number
     }
+    address: string
 }
 
 interface SetLocationAction extends Action {
@@ -21,16 +22,17 @@ interface SetLocationAction extends Action {
     payload: SetLocationActionPayload
 }
 
-export type FormAction 
+export type PlaceAction 
     = SetPlaceAction
     | SetLocationAction
 
-export type FormState = {
+export type PlaceState = {
     location: {
         lat: number
         lng: number
     },
     place: string
+    address: string
 }
 
 

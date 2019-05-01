@@ -3,12 +3,8 @@ import  * as geolib  from 'geolib'
 
 const RAKUTEN_APP_ID = "1024778152066609184"
 
-interface Prop {
-    lat: number
-    lng: number
-}
-
-export const SearchHotelByLocation = (location:Prop) => {
+export const SearchHotelByLocation = (prop:any) => {
+    const { location } = prop
     const params = {
         applicationId: RAKUTEN_APP_ID,
         datumType: 1,

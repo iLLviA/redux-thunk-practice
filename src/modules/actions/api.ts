@@ -1,7 +1,7 @@
 import { Action, Dispatch, ActionCreator } from 'redux'
 import { DoneFetchActionPayload,FailureFetchActionPayload, RootActions, RootState } from '../Types'
 import { ThunkAction, ThunkDispatch } from 'redux-thunk'
-import axios from 'axios'
+import { SearchHotelByLocation } from '../../Domain/HotelRepository'
 
 export const startFetch:ActionCreator<RootActions> = ():RootActions => ({
     type: 'START_FETCH'
@@ -25,7 +25,10 @@ export const getData = ():ThunkAction<
 > => async (dispatch:Dispatch<Action>,getState) => {
     dispatch(startFetch())
     try {
-        
+        const location = getState().place.location
+        const data = SearchHotelByLocation(location)
+        console.log(data)
+        dispatch(doneFetch({data}))
         
     }catch(e){
         dispatch(failureFetch({message:e.message}))
