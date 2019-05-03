@@ -1,7 +1,7 @@
 import { ApiActions, ApiState } from '../Types'
 
 const init = ():ApiState => ({
-    data: {},
+    data: [],
     error: '',
     onFetch: false
 })

@@ -6,7 +6,7 @@ export interface StartFetchAction extends Action {
 }
 
 export type DoneFetchActionPayload = {
-    [key:string]: string
+    data: []
 }
 
 export interface DoneFetchAction extends Action{
@@ -30,9 +30,7 @@ export type ApiActions
 
 
  export type ApiState = {
-     data: {
-         [key:string]:string
-     },
+     data: [],
      error?: string,
      onFetch: boolean
  }       

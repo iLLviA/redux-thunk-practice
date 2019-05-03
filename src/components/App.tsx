@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { RootActions, RootState, RootReducers } from '../modules'
 import ReduxThunk, { ThunkMiddleware } from 'redux-thunk'
 import Form from './Form'
+import HotelsArea from './HotelsArea'
 
 
 const store = createStore<RootState,RootActions, {}, {}>(
@@ -17,6 +18,7 @@ const App: React.SFC = () => {
     return (
         <Provider store = {store}>
             <Form />
+            <HotelsArea />
         </Provider>
     )
 }
