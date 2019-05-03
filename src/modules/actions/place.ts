@@ -2,7 +2,6 @@ import { Action, Dispatch, ActionCreator } from 'redux'
 import { RootActions, RootState, SetLocationActionPayload, SetPlaceActionPayload } from '../Types'
 import { ThunkAction } from 'redux-thunk'
 import { geocode } from '../../Domain/Geocoder'
-import console = require('console');
 
 export const setPlace:ActionCreator<RootActions>  = (payload:SetPlaceActionPayload):RootActions => ({
     type: 'SET_PLACE',
