@@ -12,7 +12,7 @@ const init = ():PlaceState => {
 }
 
 
-const placeReducer = (state:PlaceState = init() , action: PlaceAction) => {
+export const placeReducer = (state:PlaceState = init() , action: PlaceAction) => {
     switch(action.type) {
         case 'SET_PLACE':
             return {
@@ -32,4 +32,3 @@ const placeReducer = (state:PlaceState = init() , action: PlaceAction) => {
     }
 }
 
-export default placeReducer

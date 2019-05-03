@@ -6,7 +6,7 @@ const init = ():ApiState => ({
     onFetch: false
 })
 
-const apiReducer = (state:ApiState = init(), action:ApiActions) => {
+export const apiReducer = (state:ApiState = init(), action:ApiActions) => {
     switch(action.type) {
         case 'START_FETCH':
             return Object.assign({},state,{onFetch: true})
@@ -25,4 +25,3 @@ const apiReducer = (state:ApiState = init(), action:ApiActions) => {
     }
 }
 
-export default apiReducer
