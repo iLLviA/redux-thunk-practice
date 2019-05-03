@@ -25,7 +25,8 @@ export const placeReducer = (state:PlaceState = init() , action: PlaceAction) =>
                 location: {
                     lat: action.payload.location.lat,
                     lng: action.payload.location.lng
-                }
+                },
+                address: action.payload.address
             }
         default: 
             return state
