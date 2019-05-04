@@ -1,5 +1,4 @@
 import * as React from 'react'
-import styled from 'styled-components';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -7,6 +6,7 @@ import { RootActions, RootState, RootReducers } from '../modules'
 import ReduxThunk, { ThunkMiddleware } from 'redux-thunk'
 import Form from './Form'
 import HotelsArea from './HotelsArea'
+import Card from './module/Card'
 
 
 const store = createStore<RootState,RootActions, {}, {}>(
@@ -19,6 +19,7 @@ const App: React.SFC = () => {
         <Provider store = {store}>
             <Form />
             <HotelsArea />
+            <Card />
         </Provider>
     )
 }
