@@ -1,25 +1,23 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-const Title = styled.section`
-    font-size: 1.5em;
-    text-align: center;
-    color: palevioletred
+
+
+const Wrapper = styled.div`
+    display: inline-block;
+    border-radius:　5px;
 `
 
-const Wrapper = styled.section`
-    padding: 4em;
-    background: papayawhip
-`
+const Img = styled.img`
+    width: 150px;
+`;
+
 
 const test = () => {
     return (
         <Wrapper>
-            <Title>
-                Hello!
-            </Title>
+            <Img src={"https://placehold.jp/150x150.png"}/>
         </Wrapper>
-        
     )
 }
 
