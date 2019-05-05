@@ -20,7 +20,7 @@ const App: React.SFC = () => {
             <GlobalStyle />
             <Form />
             <HotelsArea />
-            <Card />
+            
         </Provider>
     )
 }
