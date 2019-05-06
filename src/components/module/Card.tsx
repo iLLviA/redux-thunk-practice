@@ -5,7 +5,7 @@ type Prop = {
     children: React.ReactNode
 }
 
-const test = (props: Prop) => {
+const Card = (props: Prop) => {
     
     return (
         <Wrapper>
@@ -23,4 +23,4 @@ const Wrapper = styled.div`
     margin-bottom: 20px;
 `
 
-export default test
+export default Card
