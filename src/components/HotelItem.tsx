@@ -42,7 +42,9 @@ const HotelItem = (props: Props) => {
                     <Text>
                         距離:{distance}m
                     </Text>
-                    <Button color={"#fff"} backgroud={"#428500"} >Mapを見る</Button>
+                    <Layout >
+                        <Button color={"#fff"} backgroud={"#428500"} >Mapを見る</Button>
+                    </Layout>
                 </RightItem>
             </Flex>
        </Wrapper>
@@ -82,13 +84,20 @@ const Tittle = styled.h1`
     margin: 0;
 `
 const RightItem = styled.div`
-    padding-top:10px;
+    padding-top:20px;
     text-align: center;
     width:25%;
+    position:relative;
 `
 const Text = styled.p`
     margin: 3px;
 `
-
+const Layout = styled.div`
+    position:absolute;
+    bottom:20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width:100%;
+`
 
 export default HotelItem
