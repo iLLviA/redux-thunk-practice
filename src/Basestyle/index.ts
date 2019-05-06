@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
         color: #2c3e50;
         text-align: center;
     }
-
+    
 `
 
 export default GlobalStyle

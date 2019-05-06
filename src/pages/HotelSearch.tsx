@@ -3,6 +3,7 @@ import Form from '../components/Form'
 import HotelArea from '../components/HotelsArea'
 import styled from 'styled-components'
 import Map from '../components/Map'
+import Modal from '../components/module/Modal'
 
 const HotelSearch = () => {
 
@@ -11,7 +12,9 @@ const HotelSearch = () => {
             <h1>ホテル検索</h1>
             <Form />
             <HotelArea />
-            {/* <Map /> */}
+            <Modal>
+                <Map /> 
+            </Modal>
         </Wrapper>
     )
 }
