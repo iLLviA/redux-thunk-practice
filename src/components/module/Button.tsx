@@ -16,6 +16,8 @@ const StyledButton = styled.button`
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
 
 `
 const Button:React.FC<Props> = (props:Props) => {

@@ -16,11 +16,12 @@ type Prop = StateProps
 
 const Wrapper = styled.div`
     display:flex;
-    justify-content:cemter;
+    justify-content:center;
 `
 
 const Ul = styled.ul`
     padding: 0;
+    list-style:none;
 `
 
 const HotelsArea = (props: Prop) => {
@@ -34,19 +35,21 @@ const HotelsArea = (props: Prop) => {
                         {
                            data.map( hotel => {
                                return (
-                                   <Card key={hotel.id}>
-                                        <HotelItem 
-                                            name={hotel.name} 
-                                            url={hotel.url} 
-                                            img={hotel.roomImageUrl ? hotel.roomImageUrl : "https://placehold.jp/230x230.png"}
-                                            review={hotel.reviewAverage}
-                                            reviewCount={hotel.reviewCount}
-                                            price={hotel.price}
-                                            address1={hotel.address1}
-                                            address2={hotel.address2}
-                                            distance={hotel.distance}
-                                        />
-                                    </Card>
+                                   <li>
+                                        <Card key={hotel.id}>
+                                            <HotelItem 
+                                                name={hotel.name} 
+                                                url={hotel.url} 
+                                                img={hotel.roomImageUrl ? hotel.roomImageUrl : "https://placehold.jp/230x230.png"}
+                                                review={hotel.reviewAverage}
+                                                reviewCount={hotel.reviewCount}
+                                                price={hotel.price}
+                                                address1={hotel.address1}
+                                                address2={hotel.address2}
+                                                distance={hotel.distance}
+                                            />
+                                        </Card>
+                                    </li>
                                )
                             })   
                         }

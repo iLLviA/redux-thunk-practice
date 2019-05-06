@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import Button from './module/Button'
 
 type Props = {
     img: string;
@@ -18,7 +19,7 @@ const HotelItem = (props: Props) => {
     
     return (
        <Wrapper>
-           <Img src={img}/>
+            <Img src={img}/>
             <Flex>
                 <Item>
                     <BorderBox>
@@ -41,6 +42,7 @@ const HotelItem = (props: Props) => {
                     <Text>
                         距離:{distance}m
                     </Text>
+                    <Button color={"#fff"} backgroud={"#428500"} >Mapを見る</Button>
                 </RightItem>
             </Flex>
        </Wrapper>
@@ -48,8 +50,9 @@ const HotelItem = (props: Props) => {
 }
 
 const Img = styled.img`
-    width:220px;
-    height:200px;
+    max-width:25%;
+    width: 100%;
+    height:auto;
     display: block;
 `
 
@@ -58,6 +61,7 @@ const Wrapper = styled.div`
     margin: 3px;
     width: 1010px;
     padding:5px;
+    height:240px;
 `
 const BorderBox = styled.div`
     border-bottom: 1px solid #e6e6e6;
@@ -66,13 +70,8 @@ const BorderBox = styled.div`
 
 const Flex = styled.div`
     display: flex;
-    width: 100%;
+    width: 75%;
 `
-const FlexRightItem = styled.div`
-    display: flex;
-    text-align:center;
-`
-
 const Item = styled.div`
     width:75%;
     text-align:left;
