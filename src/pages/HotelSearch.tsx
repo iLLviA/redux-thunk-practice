@@ -2,8 +2,8 @@ import * as React from 'react'
 import Form from '../components/Form'
 import HotelArea from '../components/HotelsArea'
 import styled from 'styled-components'
-import Map from '../components/Map'
-import Modal from '../components/module/Modal'
+// import Map from '../components/Map'
+// import Modal from '../components/module/Modal'
 
 const HotelSearch = () => {
 
@@ -11,10 +11,11 @@ const HotelSearch = () => {
         <Wrapper>
             <h1>ホテル検索</h1>
             <Form />
+            <p>例：大阪、東京タワー、大阪城 etc...</p>
             <HotelArea />
-            <Modal>
+            {/* <Modal>
                 <Map /> 
-            </Modal>
+            </Modal> */}
         </Wrapper>
     )
 }

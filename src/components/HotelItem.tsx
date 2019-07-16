@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Button from './module/Button'
 
 type Props = {
     img: string;
@@ -42,9 +41,6 @@ const HotelItem = (props: Props) => {
                     <Text>
                         距離:{distance}m
                     </Text>
-                    <Layout >
-                        <Button color={"#fff"} backgroud={"#428500"} >Mapを見る</Button>
-                    </Layout>
                 </RightItem>
             </Flex>
        </Wrapper>
